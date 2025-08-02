@@ -100,7 +100,7 @@
 **Description:**  
 The Employee API is a stateless, RESTful Golang microservice that interacts with ScyllaDB for persistent employee data storage and optionally with Redis for caching. It is deployed as a systemd service for reliability and scalability.
 
-![WhatsApp Image 2025-08-02 at 1 02 19 AM](https://github.com/user-attachments/assets/b549a610-9d21-4278-b58b-438ebbec08c5)
+<img width="800" height="700" alt="employee" src="https://github.com/user-attachments/assets/54c51112-9f88-41d4-8480-d661d7ae1d57" />
 
 ---
 
@@ -108,11 +108,17 @@ The Employee API is a stateless, RESTful Golang microservice that interacts with
 
 **Data Flow Steps:**
 
-1. Client sends HTTP requests (CRUD) to API endpoints.  
-2. API validates and processes logic.  
-3. Interacts with ScyllaDB for data operations.  
-4. Uses Redis (if enabled) for caching.  
-5. Responds to client with result or error message.
+| Step                          | Description                                                                                                                                  |
+|------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------|
+| 1. User Input (Front-End)     | The user enters employee data via the UI (web/mobile app) – like adding, updating, or viewing an employee.                                 |
+| 2. Request Sent to Backend    | The front-end sends the input as an HTTP API request to the backend server.                                                                 |
+| 3. Backend Processing         | The backend applies business logic: validates data, checks auth, and prepares DB operations.                      |
+| 4. Database Interaction       | The backend communicates with the database to fetch / insert / update / delete employee records.                                             |
+| 5. Response Sent Back         | Once processed, the backend returns a structured response (typically JSON) back to the front-end.                                            |
+| 6. Display to User            | The front-end receives the response and updates the UI to show the result – like a confirmation, table view, or success/error message.       |
+
+<img width="500" height="600" alt="data flow-employee" src="https://github.com/user-attachments/assets/f8435420-a354-419c-a5e0-70d99129cd42" />
+
 
 ---
 
